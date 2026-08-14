@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Odd Duck Lab — Independent Film Distribution</title>
+
+    <meta
+        name="description"
+        content="Odd Duck Lab — Independent film distribution. Curating cinematic oddities, beautiful anomalies, and boundary-pushing narratives."
+    >
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500&display=swap');
+
+        :root {
+            --black: #111111;
+            --paper: #f1efe8;
+            --red: #d94b32;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            background: var(--paper);
+            color: var(--black);
+            font-family: "Inter", sans-serif;
+        }
+
+        .card {
+            min-height: 100vh;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Top */
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-family: "DM Mono", monospace;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .mark {
+            width: 42px;
+            height: 42px;
+            border: 1px solid var(--black);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "DM Mono", monospace;
+            font-size: 18px;
+        }
+
+        /* Main */
+
+        main {
+            max-width: 850px;
+            margin: auto 0;
+            padding: 10vh 0;
+        }
+
+        h1 {
+            font-size: clamp(58px, 11vw, 150px);
+            line-height: 0.85;
+            letter-spacing: -0.07em;
+            font-weight: 500;
+            max-width: 900px;
+        }
+
+        .subtitle {
+            margin-top: 35px;
+            font-family: "DM Mono", monospace;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .description {
+            margin-top: 70px;
+            max-width: 600px;
+            font-size: clamp(20px, 2.5vw, 32px);
+            line-height: 1.25;
+            letter-spacing: -0.025em;
+        }
+
+        /* Contact */
+
+        .contact {
+            margin-top: 60px;
+        }
+
+        .contact a {
+            display: inline-block;
+            color: var(--black);
+            text-decoration: none;
+            border-bottom: 1px solid var(--black);
+            padding-bottom: 6px;
+
+            font-family: "DM Mono", monospace;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+
+            transition:
+                color 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .contact a:hover {
+            color: var(--red);
+            border-color: var(--red);
+        }
+
+        /* Bottom */
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            font-family: "DM Mono", monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .coordinates {
+            text-align: right;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 22px;
+            }
+
+            header {
+                font-size: 10px;
+            }
+
+            .mark {
+                width: 34px;
+                height: 34px;
+                font-size: 14px;
+            }
+
+            main {
+                padding: 8vh 0;
+            }
+
+            h1 {
+                font-size: 19vw;
+            }
+
+            .description {
+                margin-top: 45px;
+                font-size: 21px;
+            }
+
+            .contact {
+                margin-top: 45px;
+            }
+
+            footer {
+                font-size: 9px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <header>
+            <div class="mark">OD</div>
+
+            <div>
+                Independent<br>
+                Film Distribution
+            </div>
+        </header>
+
+
+        <main>
+
+            <h1>
+                Odd<br>
+                Duck<br>
+                Lab
+            </h1>
+
+            <div class="subtitle">
+                Independent Film Distribution
+            </div>
+
+            <p class="description">
+                Curating the cinematic oddities, beautiful anomalies,
+                and boundary-pushing narratives the world needs to see.
+            </p>
+
+            <div class="contact">
+                <a href="mailto:info@oddducklab.com">
+                    Initiate Connection →
+                </a>
+            </div>
+
+        </main>
+
+
+        <footer>
+
+            <div>
+                © 2026 Odd Duck Lab
+            </div>
+
+            <div class="coordinates">
+                Berlin<br>
+                Amsterdam
+            </div>
+
+        </footer>
+
+    </div>
+
+</body>
+</html>
