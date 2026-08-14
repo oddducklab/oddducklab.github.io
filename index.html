@@ -17,7 +17,7 @@
         :root {
             --black: #111111;
             --paper: #f1efe8;
-            --red: #d94b32;
+            --accent: #d8ff3e;
         }
 
         * {
@@ -30,11 +30,12 @@
         body {
             width: 100%;
             min-height: 100%;
+            background: var(--black);
         }
 
         body {
-            background: var(--paper);
-            color: var(--black);
+            background: var(--black);
+            color: var(--paper);
             font-family: "Inter", sans-serif;
         }
 
@@ -46,36 +47,12 @@
             justify-content: space-between;
         }
 
-        /* Top */
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            font-family: "DM Mono", monospace;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
-
-        .mark {
-            width: 42px;
-            height: 42px;
-            border: 1px solid var(--black);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: "DM Mono", monospace;
-            font-size: 18px;
-        }
-
         /* Main */
 
         main {
             max-width: 850px;
             margin: auto 0;
-            padding: 10vh 0;
+            padding: 5vh 0 8vh;
         }
 
         h1 {
@@ -87,7 +64,7 @@
         }
 
         .subtitle {
-            margin-top: 35px;
+            margin-top: 28px;
             font-family: "DM Mono", monospace;
             font-size: 14px;
             text-transform: uppercase;
@@ -109,11 +86,22 @@
         }
 
         .contact a {
-            display: inline-block;
-            color: var(--black);
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+
+            display: inline-flex;
+            align-items: center;
+            gap: 18px;
+
+            padding: 15px 19px;
+
+            color: #111111;
+            background: var(--accent);
+
+            border: 1px solid var(--accent);
+
             text-decoration: none;
-            border-bottom: 1px solid var(--black);
-            padding-bottom: 6px;
 
             font-family: "DM Mono", monospace;
             font-size: 13px;
@@ -121,13 +109,62 @@
             letter-spacing: 0.08em;
 
             transition:
-                color 0.2s ease,
-                border-color 0.2s ease;
+                transform 0.3s ease,
+                background-color 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        /* Subtle light / film texture on hover */
+
+        .contact a::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+
+            inset: -80%;
+
+            background:
+                radial-gradient(
+                    ellipse at 30% 40%,
+                    rgba(255, 255, 255, 0.28),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    ellipse at 70% 60%,
+                    rgba(255, 255, 255, 0.12),
+                    transparent 40%
+                );
+
+            opacity: 0;
+            transform: rotate(8deg);
+
+            transition:
+                opacity 0.4s ease,
+                transform 0.7s ease;
         }
 
         .contact a:hover {
-            color: var(--red);
-            border-color: var(--red);
+            color: #111111;
+            background: #e3ff6b;
+            border-color: #e3ff6b;
+
+            transform: translateY(-3px);
+        }
+
+        .contact a:hover::before {
+            opacity: 1;
+            transform: rotate(8deg) translate(7%, -4%);
+        }
+
+        .contact a span {
+            font-size: 17px;
+            line-height: 1;
+
+            transition: transform 0.3s ease;
+        }
+
+        .contact a:hover span {
+            transform: translateX(5px);
         }
 
         /* Bottom */
@@ -150,26 +187,22 @@
         /* Mobile */
 
         @media (max-width: 600px) {
+
             .card {
                 padding: 22px;
             }
 
-            header {
-                font-size: 10px;
-            }
-
-            .mark {
-                width: 34px;
-                height: 34px;
-                font-size: 14px;
-            }
-
             main {
-                padding: 8vh 0;
+                padding: 5vh 0 8vh;
             }
 
             h1 {
                 font-size: 19vw;
+            }
+
+            .subtitle {
+                margin-top: 24px;
+                font-size: 12px;
             }
 
             .description {
@@ -179,6 +212,11 @@
 
             .contact {
                 margin-top: 45px;
+            }
+
+            .contact a {
+                padding: 13px 16px;
+                font-size: 12px;
             }
 
             footer {
@@ -191,16 +229,6 @@
 <body>
 
     <div class="card">
-
-        <header>
-            <div class="mark">OD</div>
-
-            <div>
-                Independent<br>
-                Film Distribution
-            </div>
-        </header>
-
 
         <main>
 
@@ -221,7 +249,8 @@
 
             <div class="contact">
                 <a href="mailto:info@oddducklab.com">
-                    Initiate Connection →
+                    Start a conversation
+                    <span>→</span>
                 </a>
             </div>
 
